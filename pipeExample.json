@@ -1,0 +1,34 @@
+{
+    "infos" : {},
+    "config" : {
+	"begin": "start",
+	"end": "end"
+    },
+    "states" : {
+	"start" : {
+	    "module": '',
+	    "function": '',
+	    "target": ''
+	},
+	"intermediate1" : {
+	    "module": "",
+	    "function": "",
+	    "target": ""
+	},
+	"intermediate2" : {
+	    "module": "",
+	    "function": "",
+	    "target": ""
+	},
+	"intermediate3" : {
+	    "module": "",
+	    "function": "",
+	    "target": ""
+	},
+	"end" : {
+	    "module": "",
+	    "function": "",
+	    "target": ""
+	}
+    }
+}
