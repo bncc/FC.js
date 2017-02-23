@@ -1,0 +1,46 @@
+{
+	"start": {
+        "name": "start",
+        "actions": [
+            {
+                "name": "move",
+                "recipient": "state1"
+            }
+        ]
+    },
+    "state1": {
+        "name": "intermediate",
+        "actions": [
+            {
+                "name": "move",
+                "recipient": "state2"
+            },
+            {
+                "name": "loop",
+                "recipient": "state1"
+            },
+            {
+                "name": "finish",
+                "recipient": "end"
+            }
+        ]
+    },
+    "state2": {
+        "name": "pre-close-state",
+        "actions": [
+            {
+                "name": "finish",
+                "recipient": "end"
+            }
+        ]
+    },
+    "end": {
+        "name": "endstate",
+        "actions": [
+            {
+                "name": "close",
+                "recipient": ""
+            }
+        ]
+    }
+}
