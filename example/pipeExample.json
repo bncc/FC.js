@@ -35,12 +35,6 @@
         ]
     },
     "end": {
-        "name": "endstate",
-        "actions": [
-            {
-                "name": "close",
-                "recipient": ""
-            }
-        ]
+        "name": "endstate"
     }
 }

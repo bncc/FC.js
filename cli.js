@@ -4,6 +4,11 @@ const _ = require('lodash');
 const fs = require('fs');
 
 const engine = require('./lib/engine');
+const validator = require('./lib/validator');
+
+const stateList = require('./const/stateconsts');
+
+stateList.END_STATE;
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -21,6 +26,8 @@ catch(e){
     return;
 }
 
+const validate = validator.validate(states);
+
 let actualState = states.start;
 
 async.whilst(
@@ -33,7 +40,11 @@ async.whilst(
             
             const nextState = engine.execAction(states, actualState, command);
 
-            // TODO an exit mode need to be added
+            if(_.isEqual(nextState, END_STATE)){
+                console.log(`reach final state, exit with success`);
+                loop = false;
+                return callback();
+            }
 
             if(_.isNull(nextState)){
                 console.log(`unable to execute ${command} on state, remaining here ${actualState.name}`);
@@ -54,4 +65,3 @@ async.whilst(
         rl.close();
     }
 );
-
